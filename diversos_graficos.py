@@ -13,7 +13,6 @@ produtos_vendidos = dados.groupby('Produto')['Quantidade'].sum().sort_values(asc
 lucro_produto = dados.groupby('Produto')['Lucro'].sum().sort_values(ascending=False)
 total_vendas_produto = dados.groupby('Produto')['Total'].sum()
 margem_lucro_produto = (lucro_produto / total_vendas_produto * 100).sort_values(ascending=False)
-custo_lucro_produto = dados.groupby('Produto')[['Custo Total', 'Lucro']].sum()
 
 quantidade_de_vendas_mes.plot(kind='bar', figsize=(10, 6))
 plt.title('Quantidade de Vendas por Mês')
